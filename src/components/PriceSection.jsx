@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import price_img from "../assets/price_img.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 function PriceSection() {
     useEffect(() => {
@@ -12,15 +12,15 @@ function PriceSection() {
         });
     }, []);
 
-    const handlePurchase = () => {
-        Swal.fire({
-            title: 'Purchase Successful!',
-            text: 'Your order has been placed successfully.',
-            icon: 'success',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#1d2c70',
-        });
-    };
+    // const handlePurchase = () => {
+    //     Swal.fire({
+    //         title: 'Purchase Successful!',
+    //         text: 'Your order has been placed successfully.',
+    //         icon: 'success',
+    //         confirmButtonText: 'OK',
+    //         confirmButtonColor: '#1d2c70',
+    //     });
+    // };
 
     return (
         <div
@@ -47,7 +47,7 @@ function PriceSection() {
                 </span>
                 <button
                     className="relative px-12 py-3 mt-6 font-medium text-white group"
-                    onClick={handlePurchase}
+                // onClick={handlePurchase}
                 >
                     <span
                         className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#1d2c70] to-[#111B47] rounded-lg 
