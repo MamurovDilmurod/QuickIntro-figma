@@ -117,17 +117,17 @@ const Navbar = () => {
                         </button>
                     </ul>
                 )}
-            </div>
 
-            {/* "Back to Top" tugmasi */}
-            {isScrolled && (
-                <button
-                    onClick={scrollToTop}
-                    className="fixed bottom-5 right-5 p-3 bg-[#111B47] text-white rounded-full shadow-lg hover:bg-[#16204f] transition-all duration-300 z-50"
-                >
-                    <IoIosArrowUp />
-                </button>
-            )}
+                {/* "Back to Top" tugmasi */}
+                {isScrolled && (
+                    <button
+                        onClick={scrollToTop}
+                        className="fixed bottom-5 right-5 p-3 bg-[#111B47] text-white rounded-full shadow-lg hover:bg-[#16204f] transition-all duration-300 z-50"
+                    >
+                        <IoIosArrowUp />
+                    </button>
+                )}
+            </div>
         </nav>
     );
 };
