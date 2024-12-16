@@ -10,7 +10,7 @@ const FastSection = () => {
     }, []);
 
     return (
-        <div className='flex flex-col-reverse items-center gap-12 px-8 py-24 md:flex-row sm:flex-row'>
+        <div className='flex flex-col-reverse items-center gap-12 px-8 pt-32 pb-14 md:flex-row sm:flex-row'>
             {/* Left section with animation */}
             <div className='w-full overflow-hidden md:w-1/2' data-aos="fade-left" data-aos-delay="400">
                 <img src={Fast} alt="Light, Fast & Powerful" className='object-cover w-full h-auto transition-transform duration-300 ease-linear hover:scale-105' />

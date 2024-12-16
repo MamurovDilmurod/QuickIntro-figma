@@ -10,7 +10,7 @@ const PowerfulSection = () => {
     }, []);
 
     return (
-        <div className='flex flex-col items-center gap-16 px-6 pt-32 pb-12 md:flex-row sm:flex-row'>
+        <div className='flex flex-col items-center gap-16 px-6 pt-12 pb-12 md:flex-row sm:flex-row'>
             {/* Left section with animation */}
             <div className='w-full overflow-hidden md:w-1/2' data-aos="zoom-in" data-aos-delay="200">
                 <img src={powerful} alt="Light, Fast & Powerful" className='object-cover w-full h-auto transition-transform duration-300 ease-linear hover:scale-110' />

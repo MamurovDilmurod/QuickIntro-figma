@@ -25,7 +25,7 @@ function PriceSection() {
     return (
         <div
             id="price"
-            className="flex flex-col items-center justify-center w-full h-screen text-white bg-center bg-no-repeat bg-cover"
+            className="flex flex-col items-center justify-center w-full pt-64 text-white bg-center bg-no-repeat bg-cover pb-44"
             style={{
                 backgroundImage: `url(${price_img})`,
             }}
