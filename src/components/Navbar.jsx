@@ -13,26 +13,31 @@ const Navbar = () => {
     // Sahifa skroll qilinganida "isScrolled" ni yangilaydigan event
     useEffect(() => {
         const handleScroll = () => {
-            // Skroll 300px dan katta bo‘lsa "isScrolled" true bo‘ladi
-            if (window.scrollY > 300) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+            if (!isOpen) { // Agar mobil menyu yopiq bo'lsa
+                setIsScrolled(window.scrollY > 300);
             }
         };
 
         // Skroll eventini qo‘shish
         window.addEventListener("scroll", handleScroll);
-        // Komponent unmounted bo‘lganida eventni olib tashlash
+
+        // Komponent unmounted bo‘lganda eventni olib tashlash
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isOpen]); // "isOpen" ga bog'liq qilib qo'ydik
 
     // Burger menyuni ochish/yopish funksiyasi
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+
+        // Mobil menyu ochilganda tanani skrolldan bloklash
+        if (!isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
     };
 
-    // Sahifaning yuqorisiga smootch skroll qilish funksiyasi
+    // Sahifaning yuqorisiga silliq skroll qilish funksiyasi
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -55,7 +60,6 @@ const Navbar = () => {
     };
 
     return (
-        // Navbar skroll bo‘lganda fonni o‘zgartirish
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-50' : 'bg-transparent'}`}>
             <div className='p-4 max-w-[1240px] mx-auto'>
                 <div className='flex items-center justify-between'>
@@ -122,7 +126,7 @@ const Navbar = () => {
                 {isScrolled && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-5 right-5 p-3 bg-[#111B47] text-white rounded-full shadow-lg hover:bg-[#16204f] transition-all duration-300 z-50"
+                        className="fixed bottom-5 right-5 p-3 bg-[#111B47] text-white rounded-full shadow-lg hover:bg-[#16204f] transition-all duration-300 "
                     >
                         <IoIosArrowUp />
                     </button>
